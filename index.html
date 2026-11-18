@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="XTREME OFF ROAD - 4x4 Accessories, Off-Road Equipment & Recovery Gear. Tangier, Morocco. Built for the extreme.">
+  <title>XTREME OFF ROAD | 4x4 Accessories & Off-Road Gear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ============ RESET & ROOT ============ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #080808;
+      --black-2: #0d0d0d;
+      --black-3: #141414;
+      --card: #181818;
+      --card-hover: #1f1f1f;
+      --red: #E50914;
+      --red-glow: rgba(229, 9, 20, 0.5);
+      --red-dark: #a8060f;
+      --silver: #C7C7C7;
+      --silver-dim: #8a8a8a;
+      --white: #FFFFFF;
+      --orange: #FF8C42;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-heading: 'Rajdhani', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      background: var(--black);
+      color: var(--silver);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* RTL Support */
+    body.rtl { direction: rtl; text-align: right; }
+    body.rtl .nav-links { flex-direction: row-reverse; }
+    body.rtl .hero-content { text-align: right; }
+    body.rtl .section-header { text-align: right; }
+    body.rtl .feature-card, body.rtl .category-card, body.rtl .product-card { text-align: right; }
+    body.rtl .contact-detail { flex-direction: row-reverse; }
+    body.rtl .about-signature { flex-direction: row-reverse; }
+    body.rtl .footer-bottom { flex-direction: row-reverse; }
+    body.rtl .lightbox-close { right: auto; left: 32px; }
+
+    /* Selection */
+    ::selection { background: var(--red); color: var(--white); }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--black-2); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 5px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--red-dark); }
+
+    /* ============ TYPOGRAPHY ============ */
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--white); letter-spacing: 0.02em; }
+    h1 { font-family: var(--font-display); font-size: clamp(3.5rem, 11vw, 8rem); font-weight: 400; line-height: 0.95; letter-spacing: 0.02em; }
+    h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; text-transform: uppercase; }
+    h3 { font-size: 1.35rem; font-weight: 600; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============ UTILITY ============ */
+    .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 28px; }
+    .section { padding: 100px 0; position: relative; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-header h2 { position: relative; display: inline-block; margin-bottom: 16px; }
+    .section-header h2::after {
+      content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
+      width: 80px; height: 3px; background: var(--red);
+    }
+    .section-header p { max-width: 680px; margin: 20px auto 0; color: var(--silver-dim); font-size: 1.05rem; }
+    .accent-red { color: var(--red); }
+
+    /* ============ BUTTONS ============ */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 16px 36px; font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem;
+      letter-spacing: 0.15em; text-transform: uppercase; border-radius: 3px; cursor: pointer;
+      transition: var(--transition); border: 2px solid transparent; position: relative; overflow: hidden;
+    }
+    .btn::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.6s ease;
+    }
+    .btn:hover::before { left: 100%; }
+    .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); }
+    .btn-primary:hover { background: var(--red-dark); border-color: var(--red-dark); box-shadow: 0 0 30px var(--red-glow); transform: translateY(-2px); }
+    .btn-secondary { background: transparent; color: var(--white); border-color: rgba(199,199,199,0.4); }
+    .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.06); transform: translateY(-2px); }
+    .btn-whatsapp { background: #25D366; color: #fff; border: none; }
+    .btn-whatsapp:hover { background: #1da851; box-shadow: 0 0 25px rgba(37,211,102,0.4); transform: translateY(-2px); }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(8,8,8,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(199,199,199,0.08); padding: 14px 0; transition: var(--transition);
+    }
+    .navbar.scrolled { padding: 8px 0; background: rgba(8,8,8,0.98); box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+    .logo-area { display: flex; flex-direction: column; line-height: 1; }
+    .logo-text {
+      font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; color: var(--white);
+      letter-spacing: 0.08em; display: flex; align-items: center; gap: 2px;
+    }
+    .logo-text .dot { color: var(--red); font-size: 2rem; line-height: 0.5; }
+    .logo-sub { font-size: 0.6rem; letter-spacing: 0.5em; color: var(--silver-dim); font-weight: 600; margin-top: 2px; }
+
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-link {
+      font-family: var(--font-heading); font-size: 0.9rem; font-weight: 600; color: var(--silver);
+      transition: var(--transition); letter-spacing: 0.12em; text-transform: uppercase; position: relative; padding: 4px 0;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
+      background: var(--red); transition: width 0.4s var(--ease);
+    }
+    .nav-link:hover { color: var(--white); }
+    .nav-link:hover::after { width: 100%; }
+
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+    .lang-switcher { display: flex; gap: 4px; background: rgba(255,255,255,0.05); border-radius: 30px; padding: 4px; }
+    .lang-btn {
+      background: transparent; border: none; color: var(--silver-dim); font-size: 0.7rem; font-weight: 700;
+      padding: 6px 12px; border-radius: 20px; cursor: pointer; transition: var(--transition); font-family: var(--font-heading); letter-spacing: 0.08em;
+    }
+    .lang-btn.active { background: var(--red); color: var(--white); }
+    .lang-btn:hover:not(.active) { color: var(--white); }
+
+    .nav-wa-btn {
+      background: #25D366; color: white; padding: 10px 20px; border-radius: 40px; font-size: 0.8rem;
+      font-weight: 700; display: flex; align-items: center; gap: 8px; transition: var(--transition);
+      border: none; cursor: pointer; font-family: var(--font-heading); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .nav-wa-btn:hover { background: #1da851; transform: scale(1.03); }
+
+    .hamburger { display: none; background: transparent; border: none; color: var(--white); font-size: 1.8rem; cursor: pointer; }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden;
+      background: linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.7) 100%),
+                  url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3') center/cover no-repeat;
+      background-attachment: fixed; padding-top: 100px;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(229,9,20,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 250px;
+      background: linear-gradient(to top, var(--black), transparent); pointer-events: none;
+    }
+    .hero-content { max-width: 900px; position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px; background: rgba(229,9,20,0.15);
+      border: 1px solid var(--red); color: var(--red); padding: 8px 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.25em; border-radius: 2px; margin-bottom: 28px;
+      font-family: var(--font-heading); text-transform: uppercase;
+    }
+    .hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--red); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .hero h1 {
+      margin-bottom: 28px; background: linear-gradient(180deg, #fff 0%, #b0b0b0 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-shadow: 0 6px 30px rgba(0,0,0,0.6); filter: drop-shadow(0 4px 12px rgba(229,9,20,0.15));
+    }
+    .hero-sub {
+      font-family: var(--font-heading); font-size: 1.25rem; letter-spacing: 0.2em; color: var(--silver-light);
+      margin-bottom: 14px; font-weight: 500; text-transform: uppercase;
+    }
+    .hero-support { font-size: 1.15rem; color: var(--silver); margin-bottom: 40px; max-width: 550px; font-weight: 300; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 56px; }
+
+    .signature {
+      font-size: 0.95rem; color: var(--silver-dim); letter-spacing: 0.18em; font-style: italic;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .signature i { color: var(--red); font-size: 1.2rem; }
+    .signature::after { content: ''; flex: 1; max-width: 100px; height: 1px; background: linear-gradient(90deg, var(--red), transparent); }
+
+    .scroll-indicator {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      color: var(--silver-dim); font-size: 1.3rem; animation: bounce 2.2s infinite; z-index: 2;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+      40% { transform: translateX(-50%) translateY(-14px); opacity: 0.7; }
+      60% { transform: translateX(-50%) translateY(-7px); opacity: 0.9; }
+    }
+
+    /* ============ CATEGORIES ============ */
+    .categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .category-card {
+      background: var(--card); border-radius: 6px; overflow: hidden; transition: var(--transition);
+      border: 1px solid rgba(199,199,199,0.06); display: flex; flex-direction: column; position: relative;
+    }
+    .category-card::before {
+      content: ''; position: absolute; inset: 0; border-radius: 6px; padding: 1px;
+      background: linear-gradient(135deg, transparent, transparent, var(--red), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: var(--transition);
+      pointer-events: none; z-index: 2;
+    }
+    .category-card:hover::before { opacity: 1; }
+    .category-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .category-image {
+      height: 210px; background-size: cover; background-position: center; position: relative;
+      transition: transform 0.6s var(--ease);
+    }
+    .category-card:hover .category-image { transform: scale(1.06); }
+    .category-image::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 60%);
+    }
+    .category-content { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+    .category-title { font-size: 1.25rem; margin-bottom: 8px; color: var(--white); text-transform: uppercase; letter-spacing: 0.04em; }
+    .category-desc { font-size: 0.9rem; color: var(--silver-dim); margin-bottom: 18px; flex: 1; }
+    .category-link {
+      color: var(--red); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.15em;
+      display: flex; align-items: center; gap: 8px; transition: var(--transition);
+      text-transform: uppercase; font-family: var(--font-heading);
+    }
+    .category-link i { transition: transform 0.3s var(--ease); }
+    .category-link:hover { color: var(--orange); gap: 14px; }
+    .category-link:hover i { transform: translateX(4px); }
+
+    /* ============ FEATURED PRODUCTS ============ */
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 28px; }
+    .product-card {
+      background: var(--card); border-radius: 6px; overflow: hidden;
+      border: 1px solid rgba(199,199,199,0.06); transition: var(--transition);
+      display: flex; flex-direction: column; position: relative;
+    }
+    .product-card:hover { transform: translateY(-6px); border-color: rgba(229,9,20,0.4); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .product-image {
+      height: 230px; background-size: cover; background-position: center; position: relative; overflow: hidden;
+    }
+    .product-image::after {
+      content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,8,8,0.85), transparent 55%);
+    }
+    .product-tag {
+      position: absolute; top: 14px; left: 14px; background: var(--red); color: white; font-size: 0.6rem;
+      font-weight: 700; padding: 5px 12px; border-radius: 2px; letter-spacing: 0.15em;
+      font-family: var(--font-heading); z-index: 2; text-transform: uppercase;
+    }
+    .product-info { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+    .product-name { font-size: 1.15rem; color: var(--white); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .product-desc { font-size: 0.85rem; color: var(--silver-dim); margin-bottom: 18px; flex: 1; line-height: 1.5; }
+    .product-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; gap: 12px; }
+    .product-price { font-weight: 700; color: var(--white); font-size: 0.9rem; font-family: var(--font-heading); letter-spacing: 0.05em; }
+    .product-price small { display: block; font-size: 0.65rem; color: var(--silver-dim); font-weight: 400; letter-spacing: 0.1em; margin-top: 2px; }
+    .product-wa-btn {
+      background: #25D366; color: white; border: none; padding: 9px 16px; border-radius: 4px;
+      font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: var(--transition);
+      display: flex; align-items: center; gap: 6px; font-family: var(--font-heading); letter-spacing: 0.05em;
+    }
+    .product-wa-btn:hover { background: #1da851; transform: scale(1.04); }
+
+    /* ============ ABOUT ============ */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-image {
+      height: 500px; background: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3') center/cover no-repeat;
+      border-radius: 6px; position: relative; overflow: hidden;
+    }
+    .about-image::before {
+      content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent 60%, rgba(229,9,20,0.25));
+    }
+    .about-image::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 5px;
+      background: linear-gradient(90deg, var(--red), transparent);
+    }
+    .about-text h2 { margin-bottom: 28px; }
+    .about-text h2 span { color: var(--red); }
+    .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: var(--silver); line-height: 1.75; }
+    .about-signature {
+      margin-top: 32px; font-family: var(--font-display); font-size: 1.6rem; color: var(--white);
+      letter-spacing: 0.05em; display: flex; align-items: center; gap: 16px;
+    }
+    .about-signature .line { width: 50px; height: 2px; background: var(--red); }
+    .about-signature small { display: block; font-family: var(--font-heading); font-size: 0.7rem; letter-spacing: 0.3em; color: var(--red); text-transform: uppercase; margin-bottom: 4px; }
+
+    /* ============ WHY CHOOSE US ============ */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .feature-card {
+      background: var(--card); padding: 44px 28px; border-radius: 6px; text-align: center;
+      border: 1px solid rgba(199,199,199,0.06); transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 3px; background: var(--red); transition: width 0.5s var(--ease);
+    }
+    .feature-card:hover::before { width: 80%; }
+    .feature-card:hover { transform: translateY(-6px); border-color: rgba(229,9,20,0.3); }
+    .feature-icon {
+      width: 70px; height: 70px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center;
+      background: rgba(229,9,20,0.1); border-radius: 50%; font-size: 1.8rem; color: var(--red);
+      transition: var(--transition);
+    }
+    .feature-card:hover .feature-icon { background: var(--red); color: var(--white); transform: rotate(-6deg) scale(1.08); }
+    .feature-card h3 { font-size: 1.1rem; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .feature-card p { font-size: 0.9rem; color: var(--silver-dim); }
+
+    /* ============ GALLERY ============ */
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .gallery-item {
+      height: 240px; background-size: cover; background-position: center; border-radius: 4px;
+      cursor: pointer; transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .gallery-item::after {
+      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35);
+      transition: var(--transition); border-radius: 4px;
+    }
+    .gallery-item::before {
+      content: '\f00e'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.5);
+      color: white; font-size: 1.5rem; opacity: 0; transition: var(--transition); z-index: 3;
+    }
+    .gallery-item:hover::after { background: rgba(229,9,20,0.25); }
+    .gallery-item:hover::before { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    .gallery-item:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; height: 494px; }
+    .gallery-item:nth-child(6) { grid-column: span 2; }
+    .gallery-item:nth-child(7) { grid-row: span 2; height: 494px; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.96);
+      z-index: 2000; justify-content: center; align-items: center; padding: 24px;
+      opacity: 0; transition: opacity 0.3s ease;
+    }
+    .lightbox.active { display: flex; opacity: 1; }
+    .lightbox img {
+      max-width: 92%; max-height: 90%; border-radius: 6px;
+      border: 2px solid var(--red); box-shadow: 0 0 60px var(--red-glow);
+      animation: lightboxIn 0.4s var(--ease);
+    }
+    @keyframes lightboxIn { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 36px; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); color: white; width: 48px; height: 48px;
+      border-radius: 50%; font-size: 1.5rem; cursor: pointer; transition: var(--transition);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox-close:hover { background: var(--red); border-color: var(--red); transform: rotate(90deg); }
+
+    /* ============ CONTACT ============ */
+    .contact-section {
+      background: linear-gradient(145deg, #0c0c0c 0%, #080808 100%);
+      border-top: 1px solid rgba(229,9,20,0.12); border-bottom: 1px solid rgba(229,9,20,0.12);
+      position: relative; overflow: hidden;
+    }
+    .contact-section::before {
+      content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(229,9,20,0.08), transparent 70%); pointer-events: none;
+    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; position: relative; z-index: 2; }
+    .contact-info h2 { margin-bottom: 24px; }
+    .contact-info h2 span { color: var(--red); }
+    .contact-info > p { margin-bottom: 36px; font-size: 1.05rem; color: var(--silver); }
+    .contact-detail { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 26px; }
+    .contact-detail i {
+      font-size: 1.2rem; color: var(--red); width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      background: rgba(229,9,20,0.08); border-radius: 50%; border: 1px solid rgba(229,9,20,0.2);
+      transition: var(--transition);
+    }
+    .contact-detail:hover i { background: var(--red); color: white; transform: scale(1.08); }
+    .contact-detail strong { color: var(--white); display: block; font-size: 0.8rem; letter-spacing: 0.15em; margin-bottom: 4px; text-transform: uppercase; font-family: var(--font-heading); }
+    .contact-detail span, .contact-detail a { color: var(--silver); font-size: 0.95rem; transition: var(--transition); }
+    .contact-detail a:hover { color: var(--red); }
+
+    .contact-form {
+      background: var(--card); padding: 44px; border-radius: 6px;
+      border: 1px solid rgba(199,199,199,0.08); position: relative;
+    }
+    .contact-form::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+      background: linear-gradient(90deg, var(--red), transparent);
+    }
+    .form-group { margin-bottom: 22px; }
+    .form-group label {
+      display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 8px;
+      color: var(--silver-light); letter-spacing: 0.12em; text-transform: uppercase; font-family: var(--font-heading);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 14px 16px; background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(199,199,199,0.12); border-radius: 4px; color: var(--white);
+      font-family: var(--font-body); font-size: 0.95rem; transition: var(--transition);
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--red); background: rgba(255,255,255,0.05);
+      box-shadow: 0 0 0 3px rgba(229,9,20,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group select option { background: var(--black-3); color: var(--white); }
+
+    /* ============ FOOTER ============ */
+    .footer { background: #050505; padding: 64px 0 28px; border-top: 1px solid rgba(199,199,199,0.06); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand .logo-text { font-size: 2.1rem; margin-bottom: 6px; }
+    .footer-brand .logo-sub { margin-bottom: 20px; }
+    .footer-brand p { font-size: 0.9rem; color: var(--silver-dim); max-width: 320px; line-height: 1.7; }
+    .footer-brand .tagline { color: var(--red); font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.1em; margin-top: 16px; }
+    .footer h4 {
+      color: var(--white); font-size: 0.95rem; margin-bottom: 22px; letter-spacing: 0.15em;
+      text-transform: uppercase; font-family: var(--font-heading); position: relative; padding-bottom: 10px;
+    }
+    .footer h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: var(--red); }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 12px; }
+    .footer ul li a, .footer ul li span { color: var(--silver-dim); font-size: 0.9rem; transition: var(--transition); }
+    .footer ul li a:hover { color: var(--red); padding-left: 6px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(199,199,199,0.08); padding-top: 28px;
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      font-size: 0.8rem; color: var(--silver-dim); flex-wrap: wrap;
+    }
+    .tagline-footer { color: var(--red); font-weight: 700; letter-spacing: 0.2em; font-family: var(--font-display); font-size: 1rem; }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-image { height: 360px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 1; height: 340px; }
+      .gallery-item:nth-child(6) { grid-column: span 1; }
+      .gallery-item:nth-child(7) { grid-row: span 1; height: 240px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar .container { flex-wrap: wrap; }
+      .nav-links {
+        display: none; width: 100%; flex-direction: column; align-items: flex-start;
+        gap: 18px; padding: 24px 0 16px; border-top: 1px solid rgba(199,199,199,0.08); margin-top: 12px;
+      }
+      .nav-links.active { display: flex; }
+      .nav-actions { margin-left: auto; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 3.5rem; }
+      .hero-sub { font-size: 1rem; letter-spacing: 0.12em; }
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .section { padding: 72px 0; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; height: 260px; }
+      .gallery-item:nth-child(6) { grid-column: span 1; }
+      .gallery-item:nth-child(7) { grid-row: span 1; height: 260px; }
+      .contact-form { padding: 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 14px; }
+      .lang-switcher { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .categories-grid, .products-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.9rem; }
+      .section-header h2 { font-size: 1.9rem; }
+      .container { padding: 0 20px; }
+    }
+
+    /* ============ REDUCED MOTION ============ */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="logo-area">
+        <div class="logo-text">XTREME<span class="dot">.</span>OFF<span class="dot">.</span>ROAD</div>
+        <div class="logo-sub">4X4 ACCESSORIES</div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="#categories" class="nav-link" data-i18n="nav_categories">Catégories</a></li>
+        <li><a href="#products" class="nav-link" data-i18n="nav_products">Produits</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav_about">À Propos</a></li>
+        <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">Galerie</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="ar">AR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="nav-wa-btn">
+          <i class="fab fa-whatsapp"></i> <span data-i18n="nav_wa">WhatsApp</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge" data-i18n="hero_badge">4X4 ACCESSORIES</span>
+        <h1 data-i18n="hero_title">BUILT FOR THE EXTREME.</h1>
+        <p class="hero-sub" data-i18n="hero_sub">4X4 ACCESSORIES • OFF-ROAD EQUIPMENT • RECOVERY GEAR</p>
+        <p class="hero-support" data-i18n="hero_support">Take your adventure beyond the limits.</p>
+
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary" data-i18n="hero_cta1">EXPLORE PRODUCTS</a>
+          <a href="#contact" class="btn btn-secondary" data-i18n="hero_cta2">CONTACT US</a>
+        </div>
+
+        <div class="signature">
+          <i class="fas fa-signature"></i>
+          <span data-i18n="hero_signature">by Barnoussi Yassine</span>
+        </div>
+      </div>
+    </div>
+    <a href="#categories" class="scroll-indicator" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <!-- ========== CATEGORIES ========== -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="categories_title">PRODUCT CATEGORIES</h2>
+        <p data-i18n="categories_sub">Everything you need for your next off-road adventure.</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat1_title">4x4 Accessories</h3>
+            <p class="category-desc" data-i18n="cat1_desc">Essential upgrades for performance and style.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat2_title">Recovery Gear</h3>
+            <p class="category-desc" data-i18n="cat2_desc">Be prepared for any situation on the trail.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat3_title">Traction Boards</h3>
+            <p class="category-desc" data-i18n="cat3_desc">Get unstuck with reliable traction solutions.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat4_title">Off-Road Lighting</h3>
+            <p class="category-desc" data-i18n="cat4_desc">Illuminate the path ahead with powerful lights.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat5_title">Winches & Recovery Equipment</h3>
+            <p class="category-desc" data-i18n="cat5_desc">Heavy-duty gear for serious recovery.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat6_title">Tire Accessories</h3>
+            <p class="category-desc" data-i18n="cat6_desc">Enhance grip and durability on any terrain.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1610768764270-790fbec18178?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat7_title">Suspension & Protection</h3>
+            <p class="category-desc" data-i18n="cat7_desc">Rugged protection and improved ride quality.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat8_title">Storage & Roof Accessories</h3>
+            <p class="category-desc" data-i18n="cat8_desc">Maximize space for all your gear.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="category-content">
+            <h3 class="category-title" data-i18n="cat9_title">Interior & Exterior Accessories</h3>
+            <p class="category-desc" data-i18n="cat9_desc">Style and function inside and out.</p>
+            <a href="#products" class="category-link" data-i18n="cat_discover">Discover Products <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED PRODUCTS ========== -->
+  <section class="section" id="products" style="background: #0c0c0c;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="products_title">FEATURED PRODUCTS</h2>
+        <p data-i18n="products_sub">Premium gear for every adventure. Contact us for pricing and availability.</p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');">
+            <span class="product-tag" data-i18n="product_new">NEW</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name" data-i18n="prod1_name">Off-Road LED Light Bar</h3>
+            <p class="product-desc" data-i18n="prod1_desc">High-output LED bar for maximum visibility.</p>
+            <div class="product-bottom">
+              <span class="product-price" data-i18n="product_quote">Request a Quote</span>
+              <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="product-wa-btn">
+                <i class="fab fa-whatsapp"></i> <span data-i18n="product_inquire">Inquire</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="product-info">
+            <h3 class="product-name" data-i18n="prod2_name">Heavy-Duty Recovery Kit</h3>
+            <p class="product-desc" data-i18n="prod2_desc">Complete kit with straps, shackles, and gloves.</p>
+            <div class="product-bottom">
+              <span class="product-price" data-i18n="product_quote">Request a Quote</span>
+              <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="product-wa-btn">
+                <i class="fab fa-whatsapp"></i> <span data-i18n="product_inquire">Inquire</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="product-info">
+            <h3 class="product-name" data-i18n="prod3_name">All-Terrain Traction Boards</h3>
+            <p class="product-desc" data-i18n="prod3_desc">Durable traction boards for sand, mud, and snow.</p>
+            <div class="product-bottom">
+              <span class="product-price" data-i18n="product_quote">Request a Quote</span>
+              <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="product-wa-btn">
+                <i class="fab fa-whatsapp"></i> <span data-i18n="product_inquire">Inquire</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal">
+          <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');"></div>
+          <div class="product-info">
+            <h3 class="product-name" data-i18n="prod4_name">Roof Rack Storage System</h3>
+            <p class="product-desc" data-i18n="prod4_desc">Modular roof rack for extra cargo space.</p>
+            <div class="product-bottom">
+              <span class="product-price" data-i18n="product_quote">Request a Quote</span>
+              <a href="https://wa.me/212600000000" target="_blank" rel="noopener" class="product-wa-btn">
+                <i class="fab fa-whatsapp"></i> <span data-i18n="product_inquire">Inquire</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal"></div>
+        <div class="about-text reveal">
+          <h2 data-i18n="about_title">MORE THAN ACCESSORIES. <span>IT'S A WAY OF LIFE.</span></h2>
+          <p data-i18n="about_p1">XTREME OFF ROAD, founded by Barnoussi Yassine, is dedicated to the world of 4x4 and off-road adventures.</p>
+          <p data-i18n="about_p2">Our passion is helping drivers equip their vehicles with practical accessories and equipment for exploration, performance and adventure.</p>
+          <p data-i18n="about_p3">From everyday 4x4 upgrades to demanding off-road journeys, we believe every adventure deserves the right equipment.</p>
+          <div class="about-signature">
+            <span class="line"></span>
+            <span>
+              <small data-i18n="about_founder">FOUNDER</small>
+              <span data-i18n="about_signature">by Barnoussi Yassine</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY CHOOSE US ========== -->
+  <section class="section" style="background: #0c0c0c;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="why_title">WHY CHOOSE US</h2>
+        <p data-i18n="why_sub">What sets XTREME OFF ROAD apart.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+          <h3 data-i18n="feat1_title">Passion for 4x4</h3>
+          <p data-i18n="feat1_desc">We live and breathe off-road adventures.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-check-double"></i></div>
+          <h3 data-i18n="feat2_title">Carefully Selected Equipment</h3>
+          <p data-i18n="feat2_desc">Only the best gear makes it to our catalog.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-headset"></i></div>
+          <h3 data-i18n="feat3_title">Customer-Focused Service</h3>
+          <p data-i18n="feat3_desc">We're here to help you every step of the way.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><i class="fas fa-compass"></i></div>
+          <h3 data-i18n="feat4_title">Adventure Without Limits</h3>
+          <p data-i18n="feat4_desc">Go further with equipment you can trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="gallery_title">GALLERY</h2>
+        <p data-i18n="gallery_sub">Moments from the trail.</p>
+      </div>
+
+      <div class="gallery-grid reveal" id="galleryGrid">
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');" data-src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"></div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3');" data-src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3"></div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');" data-src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"></div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');" data-src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"></div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');" data-src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"></div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1610768764270-790fbec18178?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');" data-src="https://images.unsplash.com/photo-1610768764270-790fbec18178?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"></div>
+        <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3');" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img src="" alt="Gallery Image" id="lightboxImg">
+  </div>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h2 data-i18n="contact_title">READY FOR YOUR NEXT <span>ADVENTURE?</span></h2>
+          <p data-i18n="contact_desc">Get in touch with us for product inquiries, custom builds, or any questions.</p>
+
+          <div class="contact-detail">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <strong data-i18n="contact_wa_label">WhatsApp</strong>
+              <a href="https://wa.me/212600000000" target="_blank" rel="noopener">+212 600 000 000</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <strong data-i18n="contact_phone_label">Phone</strong>
+              <span>+212 600 000 000</span>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong data-i18n="contact_email_label">Email</strong>
+              <a href="mailto:contact@xtremeoffroad.ma">contact@xtremeoffroad.ma</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fab fa-instagram"></i>
+            <div>
+              <strong data-i18n="contact_insta_label">Instagram</strong>
+              <a href="#" target="_blank" rel="noopener">@xtremeoffroad.ma</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong data-i18n="contact_location_label">Location</strong>
+              <span data-i18n="contact_location">Tangier, Morocco</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/contact@xtremeoffroad.ma" method="POST">
+          <div class="form-group">
+            <label for="name" data-i18n="form_name">Nom complet</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="phone" data-i18n="form_phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+212 ...">
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="form_email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="vous@exemple.com">
+          </div>
+          <div class="form-group">
+            <label for="interest" data-i18n="form_interest">Produit ou service d'intérêt</label>
+            <select id="interest" name="interest">
+              <option value="4x4 Accessories" data-i18n="opt1">4x4 Accessories</option>
+              <option value="Recovery Gear" data-i18n="opt2">Recovery Gear</option>
+              <option value="Traction Boards" data-i18n="opt3">Traction Boards</option>
+              <option value="Off-Road Lighting" data-i18n="opt4">Off-Road Lighting</option>
+              <option value="Winches" data-i18n="opt5">Winches & Recovery</option>
+              <option value="Tire Accessories" data-i18n="opt6">Tire Accessories</option>
+              <option value="Suspension" data-i18n="opt7">Suspension & Protection</option>
+              <option value="Storage" data-i18n="opt8">Storage & Roof</option>
+              <option value="Interior" data-i18n="opt9">Interior & Exterior</option>
+              <option value="Other" data-i18n="opt10">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form_message">Message</label>
+            <textarea id="message" name="message" required placeholder="..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;" data-i18n="form_submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">XTREME<span class="dot">.</span>OFF<span class="dot">.</span>ROAD</div>
+          <div class="logo-sub">4X4 ACCESSORIES</div>
+          <p data-i18n="footer_brand_desc">Premium 4x4 accessories and off-road equipment. Built for the extreme, designed for adventure.</p>
+          <div class="tagline" data-i18n="footer_tagline">GO BEYOND YOUR LIMITS.</div>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer_links">LIENS RAPIDES</h4>
+          <ul>
+            <li><a href="#home" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="#categories" data-i18n="nav_categories">Catégories</a></li>
+            <li><a href="#products" data-i18n="nav_products">Produits</a></li>
+            <li><a href="#about" data-i18n="nav_about">À Propos</a></li>
+            <li><a href="#gallery" data-i18n="nav_gallery">Galerie</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 data-i18n="footer_contact">CONTACT</h4>
+          <ul>
+            <li><a href="https://wa.me/212600000000" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="mailto:contact@xtremeoffroad.ma">contact@xtremeoffroad.ma</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+            <li><span data-i18n="contact_location">Tangier, Morocco</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 XTREME OFF ROAD. <span data-i18n="footer_rights">All rights reserved.</span></span>
+        <span class="tagline-footer" data-i18n="footer_tagline">GO BEYOND YOUR LIMITS.</span>
+        <span data-i18n="hero_signature">by Barnoussi Yassine</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ---------- Translation Data ----------
+    const translations = {
+      fr: {
+        nav_home: "Accueil", nav_categories: "Catégories", nav_products: "Produits",
+        nav_about: "À Propos", nav_gallery: "Galerie", nav_contact: "Contact", nav_wa: "WhatsApp",
+        hero_badge: "4X4 ACCESSORIES", hero_title: "BUILT FOR THE EXTREME.",
+        hero_sub: "4X4 ACCESSORIES • OFF-ROAD EQUIPMENT • RECOVERY GEAR",
+        hero_support: "Take your adventure beyond the limits.",
+        hero_cta1: "EXPLORE PRODUCTS", hero_cta2: "CONTACT US",
+        hero_signature: "by Barnoussi Yassine",
+        categories_title: "CATÉGORIES DE PRODUITS",
+        categories_sub: "Tout ce dont vous avez besoin pour votre prochaine aventure tout-terrain.",
+        cat1_title: "Accessoires 4x4", cat1_desc: "Améliorations essentielles pour la performance et le style.",
+        cat2_title: "Équipement de Récupération", cat2_desc: "Soyez préparé à toute situation sur le sentier.",
+        cat3_title: "Planches de Traction", cat3_desc: "Débloquez-vous avec des solutions de traction fiables.",
+        cat4_title: "Éclairage Tout-Terrain", cat4_desc: "Illuminez le chemin avec des lumières puissantes.",
+        cat5_title: "Treuils & Récupération", cat5_desc: "Équipement robuste pour les récupérations sérieuses.",
+        cat6_title: "Accessoires de Pneus", cat6_desc: "Améliorez l'adhérence et la durabilité sur tout terrain.",
+        cat7_title: "Suspension & Protection", cat7_desc: "Protection robuste et qualité de conduite améliorée.",
+        cat8_title: "Stockage & Toit", cat8_desc: "Maximisez l'espace pour tout votre équipement.",
+        cat9_title: "Accessoires Intérieur & Extérieur", cat9_desc: "Style et fonctionnalité à l'intérieur comme à l'extérieur.",
+        cat_discover: "Découvrir les Produits",
+        products_title: "PRODUITS VEDETTES",
+        products_sub: "Équipement premium pour chaque aventure. Contactez-nous pour les prix et la disponibilité.",
+        product_new: "NOUVEAU", product_quote: "Demander un Devis", product_inquire: "Demander",
+        prod1_name: "Barre LED Tout-Terrain", prod1_desc: "Barre LED haute puissance pour une visibilité maximale.",
+        prod2_name: "Kit de Récupération Renforcé", prod2_desc: "Kit complet avec sangles, manilles et gants.",
+        prod3_name: "Planches de Traction Tout-Terrain", prod3_desc: "Planches de traction durables pour sable, boue et neige.",
+        prod4_name: "Système de Stockage sur Toit", prod4_desc: "Rack de toit modulaire pour un espace de chargement supplémentaire.",
+        about_title: "MORE THAN ACCESSORIES. IT'S A WAY OF LIFE.",
+        about_p1: "XTREME OFF ROAD, fondé par Barnoussi Yassine, est dédié au monde du 4x4 et des aventures tout-terrain.",
+        about_p2: "Notre passion est d'aider les conducteurs à équiper leurs véhicules avec des accessoires et équipements pratiques pour l'exploration, la performance et l'aventure.",
+        about_p3: "Des améliorations 4x4 quotidiennes aux voyages tout-terrain exigeants, nous croyons que chaque aventure mérite le bon équipement.",
+        about_founder: "FONDATEUR", about_signature: "by Barnoussi Yassine",
+        why_title: "POURQUOI NOUS CHOISIR", why_sub: "Ce qui distingue XTREME OFF ROAD.",
+        feat1_title: "Passion pour le 4x4", feat1_desc: "Nous vivons et respirons les aventures tout-terrain.",
+        feat2_title: "Équipement Sélectionné avec Soin", feat2_desc: "Seul le meilleur équipement entre dans notre catalogue.",
+        feat3_title: "Service Axé sur le Client", feat3_desc: "Nous sommes là pour vous aider à chaque étape.",
+        feat4_title: "Aventure Sans Limites", feat4_desc: "Allez plus loin avec un équipement de confiance.",
+        gallery_title: "GALERIE", gallery_sub: "Moments du sentier.",
+        contact_title: "READY FOR YOUR NEXT ADVENTURE?",
+        contact_desc: "Contactez-nous pour les demandes de produits, les constructions personnalisées ou toute question.",
+        contact_wa_label: "WhatsApp", contact_phone_label: "Téléphone", contact_email_label: "Email",
+        contact_insta_label: "Instagram", contact_location_label: "Localisation", contact_location: "Tanger, Maroc",
+        form_name: "Nom complet", form_phone: "Téléphone", form_email: "Email",
+        form_interest: "Produit ou service d'intérêt", form_message: "Message", form_submit: "ENVOYER LE MESSAGE",
+        opt1: "Accessoires 4x4", opt2: "Équipement de Récupération", opt3: "Planches de Traction",
+        opt4: "Éclairage Tout-Terrain", opt5: "Treuils & Récupération", opt6: "Accessoires de Pneus",
+        opt7: "Suspension & Protection", opt8: "Stockage & Toit", opt9: "Intérieur & Extérieur", opt10: "Autre",
+        footer_brand_desc: "Accessoires 4x4 et équipements tout-terrain premium. Conçus pour l'extrême, pensés pour l'aventure.",
+        footer_tagline: "GO BEYOND YOUR LIMITS.", footer_links: "LIENS RAPIDES", footer_contact: "CONTACT", footer_rights: "Tous droits réservés."
+      },
+      en: {
+        nav_home: "Home", nav_categories: "Categories", nav_products: "Products",
+        nav_about: "About Us", nav_gallery: "Gallery", nav_contact: "Contact", nav_wa: "WhatsApp",
+        hero_badge: "4X4 ACCESSORIES", hero_title: "BUILT FOR THE EXTREME.",
+        hero_sub: "4X4 ACCESSORIES • OFF-ROAD EQUIPMENT • RECOVERY GEAR",
+        hero_support: "Take your adventure beyond the limits.",
+        hero_cta1: "EXPLORE PRODUCTS", hero_cta2: "CONTACT US",
+        hero_signature: "by Barnoussi Yassine",
+        categories_title: "PRODUCT CATEGORIES", categories_sub: "Everything you need for your next off-road adventure.",
+        cat1_title: "4x4 Accessories", cat1_desc: "Essential upgrades for performance and style.",
+        cat2_title: "Recovery Gear", cat2_desc: "Be prepared for any situation on the trail.",
+        cat3_title: "Traction Boards", cat3_desc: "Get unstuck with reliable traction solutions.",
+        cat4_title: "Off-Road Lighting", cat4_desc: "Illuminate the path ahead with powerful lights.",
+        cat5_title: "Winches & Recovery Equipment", cat5_desc: "Heavy-duty gear for serious recovery.",
+        cat6_title: "Tire Accessories", cat6_desc: "Enhance grip and durability on any terrain.",
+        cat7_title: "Suspension & Protection", cat7_desc: "Rugged protection and improved ride quality.",
+        cat8_title: "Storage & Roof Accessories", cat8_desc: "Maximize space for all your gear.",
+        cat9_title: "Interior & Exterior Accessories", cat9_desc: "Style and function inside and out.",
+        cat_discover: "Discover Products",
+        products_title: "FEATURED PRODUCTS",
+        products_sub: "Premium gear for every adventure. Contact us for pricing and availability.",
+        product_new: "NEW", product_quote: "Request a Quote", product_inquire: "Inquire",
+        prod1_name: "Off-Road LED Light Bar", prod1_desc: "High-output LED bar for maximum visibility.",
+        prod2_name: "Heavy-Duty Recovery Kit", prod2_desc: "Complete kit with straps, shackles, and gloves.",
+        prod3_name: "All-Terrain Traction Boards", prod3_desc: "Durable traction boards for sand, mud, and snow.",
+        prod4_name: "Roof Rack Storage System", prod4_desc: "Modular roof rack for extra cargo space.",
+        about_title: "MORE THAN ACCESSORIES. IT'S A WAY OF LIFE.",
+        about_p1: "XTREME OFF ROAD, founded by Barnoussi Yassine, is dedicated to the world of 4x4 and off-road adventures.",
+        about_p2: "Our passion is helping drivers equip their vehicles with practical accessories and equipment for exploration, performance and adventure.",
+        about_p3: "From everyday 4x4 upgrades to demanding off-road journeys, we believe every adventure deserves the right equipment.",
+        about_founder: "FOUNDER", about_signature: "by Barnoussi Yassine",
+        why_title: "WHY CHOOSE US", why_sub: "What sets XTREME OFF ROAD apart.",
+        feat1_title: "Passion for 4x4", feat1_desc: "We live and breathe off-road adventures.",
+        feat2_title: "Carefully Selected Equipment", feat2_desc: "Only the best gear makes it to our catalog.",
+        feat3_title: "Customer-Focused Service", feat3_desc: "We're here to help you every step of the way.",
+        feat4_title: "Adventure Without Limits", feat4_desc: "Go further with equipment you can trust.",
+        gallery_title: "GALLERY", gallery_sub: "Moments from the trail.",
+        contact_title: "READY FOR YOUR NEXT ADVENTURE?",
+        contact_desc: "Get in touch with us for product inquiries, custom builds, or any questions.",
+        contact_wa_label: "WhatsApp", contact_phone_label: "Phone", contact_email_label: "Email",
+        contact_insta_label: "Instagram", contact_location_label: "Location", contact_location: "Tangier, Morocco",
+        form_name: "Full Name", form_phone: "Phone", form_email: "Email",
+        form_interest: "Product or Service of Interest", form_message: "Message", form_submit: "SEND MESSAGE",
+        opt1: "4x4 Accessories", opt2: "Recovery Gear", opt3: "Traction Boards",
+        opt4: "Off-Road Lighting", opt5: "Winches & Recovery", opt6: "Tire Accessories",
+        opt7: "Suspension & Protection", opt8: "Storage & Roof", opt9: "Interior & Exterior", opt10: "Other",
+        footer_brand_desc: "Premium 4x4 accessories and off-road equipment. Built for the extreme, designed for adventure.",
+        footer_tagline: "GO BEYOND YOUR LIMITS.", footer_links: "QUICK LINKS", footer_contact: "CONTACT", footer_rights: "All rights reserved."
+      },
+      ar: {
+        nav_home: "الرئيسية", nav_categories: "الفئات", nav_products: "المنتجات",
+        nav_about: "من نحن", nav_gallery: "معرض الصور", nav_contact: "اتصل بنا", nav_wa: "واتساب",
+        hero_badge: "ملحقات الدفع الرباعي", hero_title: "صُمم للظروف القصوى.",
+        hero_sub: "ملحقات 4x4 • معدات الطرق الوعرة • معدات الإنقاذ",
+        hero_support: "خذ مغامرتك إلى ما هو أبعد من الحدود.",
+        hero_cta1: "استكشف المنتجات", hero_cta2: "اتصل بنا",
+        hero_signature: "من برنوسي ياسين",
+        categories_title: "فئات المنتجات", categories_sub: "كل ما تحتاجه لمغامرتك القادمة على الطرق الوعرة.",
+        cat1_title: "ملحقات 4x4", cat1_desc: "ترقيات أساسية للأداء والأناقة.",
+        cat2_title: "معدات الإنقاذ", cat2_desc: "كن مستعدًا لأي موقف على الممر.",
+        cat3_title: "ألواح الجر", cat3_desc: "تخلص من التعلق بحلول جر موثوقة.",
+        cat4_title: "إضاءة الطرق الوعرة", cat4_desc: "أضئ الطريق بأضواء قوية.",
+        cat5_title: "الرافعات ومعدات الإنقاذ", cat5_desc: "معدات ثقيلة للإنقاذ الجاد.",
+        cat6_title: "ملحقات الإطارات", cat6_desc: "عزز الثبات والمتانة على أي تضاريس.",
+        cat7_title: "التعليق والحماية", cat7_desc: "حماية قوية وجودة قيادة محسنة.",
+        cat8_title: "التخزين والسقف", cat8_desc: "ضاعف المساحة لكل معداتك.",
+        cat9_title: "ملحقات داخلية وخارجية", cat9_desc: "أناقة ووظيفة من الداخل والخارج.",
+        cat_discover: "اكتشف المنتجات",
+        products_title: "منتجات مميزة", products_sub: "معدات متميزة لكل مغامرة. اتصل بنا للأسعار والتوافر.",
+        product_new: "جديد", product_quote: "اطلب عرض سعر", product_inquire: "استفسر",
+        prod1_name: "شريط إضاءة LED للطرق الوعرة", prod1_desc: "شريط LED عالي الإخراج لأقصى رؤية.",
+        prod2_name: "مجموعة إنقاذ شديدة التحمل", prod2_desc: "مجموعة كاملة مع أحزمة وأغلال وقفازات.",
+        prod3_name: "ألواح جر لجميع التضاريس", prod3_desc: "ألواح جر متينة للرمل والطين والثلج.",
+        prod4_name: "نظام تخزين على السقف", prod4_desc: "رف سقف معياري لمساحة شحن إضافية.",
+        about_title: "أكثر من مجرد ملحقات. إنها طريقة حياة.",
+        about_p1: "إكستريم أوف رود، التي أسسها برنوسي ياسين، مكرسة لعالم 4x4 ومغامرات الطرق الوعرة.",
+        about_p2: "شغفنا هو مساعدة السائقين على تجهيز مركباتهم بملحقات ومعدات عملية للاستكشاف والأداء والمغامرة.",
+        about_p3: "من ترقيات 4x4 اليومية إلى رحلات الطرق الوعرة الصعبة، نعتقد أن كل مغامرة تستحق المعدات المناسبة.",
+        about_founder: "المؤسس", about_signature: "من برنوسي ياسين",
+        why_title: "لماذا تختارنا", why_sub: "ما يميز إكستريم أوف رود.",
+        feat1_title: "شغف 4x4", feat1_desc: "نحن نعيش ونستنشق مغامرات الطرق الوعرة.",
+        feat2_title: "معدات مختارة بعناية", feat2_desc: "أفضل المعدات فقط تصل إلى كتالوجنا.",
+        feat3_title: "خدمة تركز على العميل", feat3_desc: "نحن هنا لمساعدتك في كل خطوة.",
+        feat4_title: "مغامرة بلا حدود", feat4_desc: "اذهب أبعد مع معدات يمكنك الوثوق بها.",
+        gallery_title: "معرض الصور", gallery_sub: "لحظات من الممر.",
+        contact_title: "هل أنت مستعد لمغامرتك القادمة؟",
+        contact_desc: "تواصل معنا لاستفسارات المنتجات، أو البناء المخصص، أو أي أسئلة.",
+        contact_wa_label: "واتساب", contact_phone_label: "هاتف", contact_email_label: "البريد الإلكتروني",
+        contact_insta_label: "إنستغرام", contact_location_label: "الموقع", contact_location: "طنجة، المغرب",
+        form_name: "الاسم الكامل", form_phone: "الهاتف", form_email: "البريد الإلكتروني",
+        form_interest: "المنتج أو الخدمة محل الاهتمام", form_message: "رسالة", form_submit: "أرسل الرسالة",
+        opt1: "ملحقات 4x4", opt2: "معدات الإنقاذ", opt3: "ألواح الجر",
+        opt4: "إضاءة الطرق الوعرة", opt5: "الرافعات والإنقاذ", opt6: "ملحقات الإطارات",
+        opt7: "التعليق والحماية", opt8: "التخزين والسقف", opt9: "الداخل والخارج", opt10: "أخرى",
+        footer_brand_desc: "ملحقات 4x4 ومعدات الطرق الوعرة المتميزة. صُممت للظروف القصوى، ومصممة للمغامرة.",
+        footer_tagline: "تجاوز حدودك.", footer_links: "روابط سريعة", footer_contact: "اتصل", footer_rights: "جميع الحقوق محفوظة."
+      }
+    };
+
+    let currentLang = 'fr';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.documentElement.lang = lang;
+      if (lang === 'ar') {
+        document.body.classList.add('rtl');
+      } else {
+        document.body.classList.remove('rtl');
+      }
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    setLanguage('fr');
+
+    // ---------- Navbar Scroll Effect ----------
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ---------- Hamburger Menu ----------
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    // ---------- Gallery Lightbox ----------
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const src = item.getAttribute('data-src') || item.style.backgroundImage.slice(5, -2);
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+    });
+
+    // ---------- Scroll Reveal ----------
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ---------- Contact Form ----------
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.textContent = currentLang === 'fr' ? 'ENVOI EN COURS...' : currentLang === 'ar' ? 'جاري الإرسال...' : 'SENDING...';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+    });
+  </script>
+</body>
+</html>
